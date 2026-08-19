@@ -1,0 +1,18 @@
+[general]
+name=GeoData Quality & Optimization
+qgisMinimumVersion=3.28
+qgisMaximumVersion=3.99
+description=Contrôle qualité géométrique et optimisation de données PostGIS à forte volumétrie.
+about=Plugin QGIS professionnel pour auditer la qualité des données géographiques (géométries invalides, doublons, CRS, auto-intersections, chevauchements, attributs manquants) et pour analyser/optimiser les performances de requêtes spatiales PostGIS (index GiST, EXPLAIN ANALYZE, benchmarks). Conçu pour des volumétries de plusieurs millions d'objets (ex. parcelles cadastrales).
+version=1.0.0
+author=Kenewy Diallo
+email=khadidiatoukenewydiallo@outlook.fr
+tracker=https://github.com/kdiallo/geodata-quality-optimization/issues
+repository=https://github.com/kdiallo/geodata-quality-optimization
+homepage=https://github.com/kdiallo/geodata-quality-optimization
+tags=postgis,quality,geometry,optimization,performance,cadastre,python,pyqgis
+category=Vector
+icon=resources/icon.png
+experimental=False
+deprecated=False
+changelog=1.0.0 - Version initiale : contrôles qualité géométriques, module d'optimisation PostGIS avec benchmarks, tests + CI/CD, packaging.

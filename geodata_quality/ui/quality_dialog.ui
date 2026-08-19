@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QualityDialog</class>
+ <widget class="QDialog" name="QualityDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GeoData Quality &amp; Optimization</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>&lt;h2&gt;Contrôle qualité &amp;&amp; optimisation PostGIS&lt;/h2&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="sourceGroup">
+     <property name="title">
+      <string>Source de données</string>
+     </property>
+     <layout class="QFormLayout" name="sourceForm">
+      <item row="0" column="0">
+       <widget class="QLabel" name="layerLabel">
+        <property name="text">
+         <string>Couche vecteur :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QgsMapLayerComboBox" name="layerCombo"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="connLabel">
+        <property name="text">
+         <string>Connexion PostGIS :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="connCombo"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="checksGroup">
+     <property name="title">
+      <string>Contrôles à exécuter</string>
+     </property>
+     <layout class="QGridLayout" name="checksLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="chkInvalid">
+        <property name="text"><string>Géométries invalides</string></property>
+        <property name="checked"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="chkEmpty">
+        <property name="text"><string>Géométries vides</string></property>
+        <property name="checked"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="chkDuplicate">
+        <property name="text"><string>Doublons</string></property>
+        <property name="checked"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="chkMultipart">
+        <property name="text"><string>Multi-parties</string></property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="chkSelfIntersect">
+        <property name="text"><string>Auto-intersections</string></property>
+        <property name="checked"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="chkOverlap">
+        <property name="text"><string>Chevauchements</string></property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="chkCrs">
+        <property name="text"><string>Contrôle CRS</string></property>
+        <property name="checked"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="chkAttributes">
+        <property name="text"><string>Attributs obligatoires</string></property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="paramsGroup">
+     <property name="title">
+      <string>Paramètres</string>
+     </property>
+     <layout class="QFormLayout" name="paramsForm">
+      <item row="0" column="0">
+       <widget class="QLabel" name="crsLabel">
+        <property name="text"><string>CRS attendu (EPSG) :</string></property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="crsEdit">
+        <property name="text"><string>EPSG:2154</string></property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="reqLabel">
+        <property name="text"><string>Champs obligatoires (séparés par ,) :</string></property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="reqEdit"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="value"><number>0</number></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="resultsText">
+     <property name="readOnly"><bool>true</bool></property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+     <item>
+      <widget class="QPushButton" name="runButton">
+       <property name="text"><string>Lancer l'analyse</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="exportButton">
+       <property name="text"><string>Exporter le rapport…</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeButton">
+       <property name="text"><string>Fermer</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgis.gui</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
